@@ -6,5 +6,6 @@ cc_library(
     deps = [
         "@allwpilib//dependencies/cpp/wpilibNewCommands",
         "@allwpilib//dependencies/cpp/wpilibc",
+        "@navx//dependencies/cpp/navx",
     ],
 )

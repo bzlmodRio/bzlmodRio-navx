@@ -18,6 +18,9 @@ DriveTrain::DriveTrain()
                                     std::numbers::pi / 360.0);
   m_rightEncoder.SetDistancePerPulse(units::foot_t{4_in}.to<double>() *
                                     std::numbers::pi / 360.0);
+                                    
+  frc::sim::SimDeviceSim gyroDeviceSim("navX-Sensor[4]");
+  m_gyroSim = gyroDeviceSim.GetDouble("Yaw");
 
   frc::SmartDashboard::PutData("Field", &m_field);
 
@@ -88,5 +91,5 @@ void DriveTrain::SimulationPeriodic() {
       m_drivetrainSimulator.GetRightPosition().to<double>());
   m_rightEncoderSim.SetRate(
       m_drivetrainSimulator.GetRightVelocity().to<double>());
-  m_gyroSim.SetAngle(-m_drivetrainSimulator.GetHeading().Degrees());
+  m_gyroSim.Set(-m_drivetrainSimulator.GetHeading().Degrees().to<double>());
 }

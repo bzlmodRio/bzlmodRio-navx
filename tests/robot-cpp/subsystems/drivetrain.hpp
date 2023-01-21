@@ -1,17 +1,17 @@
 #pragma once
 
-#include <frc/ADXRS450_Gyro.h>
+#include "AHRS.h"
 #include <frc/Encoder.h>
 #include <frc/motorcontrol/PWMVictorSPX.h>
 #include <frc/motorcontrol/MotorControllerGroup.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/kinematics/DifferentialDriveOdometry.h>
-#include <frc/simulation/ADXRS450_GyroSim.h>
 #include <frc/simulation/DifferentialDrivetrainSim.h>
 #include <frc/simulation/EncoderSim.h>
 #include <frc/simulation/SimDeviceSim.h>
 #include <frc/smartdashboard/Field2d.h>
 #include <frc2/command/SubsystemBase.h>
+#include <hal/SimDevice.h>
 
 #include "robot-cpp/subsystems/ports.hpp"
 
@@ -50,13 +50,13 @@ class DriveTrain : public frc2::SubsystemBase {
                              kDrivetrainEncoderLeftPortB};
   frc::Encoder m_rightEncoder{kDrivetrainEncoderRightPortA,
                               kDrivetrainEncoderRightPortB};
-  frc::ADXRS450_Gyro m_gyro;
+  AHRS m_gyro;
 
   frc::DifferentialDriveOdometry m_odometry{m_gyro.GetRotation2d(), 0_m, 0_m};
   frc::Field2d m_field;
 
   // Simulation
-  frc::sim::ADXRS450_GyroSim m_gyroSim{m_gyro};
+  hal::SimDouble m_gyroSim;
   frc::sim::EncoderSim m_leftEncoderSim{m_leftEncoder};
   frc::sim::EncoderSim m_rightEncoderSim{m_rightEncoder};
   frc::sim::DifferentialDrivetrainSim m_drivetrainSimulator;

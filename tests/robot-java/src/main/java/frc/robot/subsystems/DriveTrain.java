@@ -4,7 +4,6 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
@@ -15,12 +14,14 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
-import edu.wpi.first.wpilibj.simulation.ADXRS450_GyroSim;
 import edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim;
 import edu.wpi.first.wpilibj.simulation.EncoderSim;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.hal.SimDouble;
+import edu.wpi.first.wpilibj.simulation.SimDeviceSim;
+import com.kauailabs.navx.frc.AHRS;
 
 public class DriveTrain extends SubsystemBase {
 
@@ -31,13 +32,13 @@ public class DriveTrain extends SubsystemBase {
 
   private final Encoder m_leftEncoder;
   private final Encoder m_rightEncoder;
-  private final ADXRS450_Gyro m_gyro;
+  private final AHRS m_gyro;
 
   private final DifferentialDriveOdometry m_odometry;
   private final Field2d m_field;
 
   // Sim
-  private ADXRS450_GyroSim m_gyroSim;
+  private SimDouble m_gyroSim;
   private EncoderSim m_leftEncoderSim;
   private EncoderSim m_rightEncoderSim;
   private DifferentialDrivetrainSim m_drivetrainSimulator;
@@ -55,7 +56,7 @@ public class DriveTrain extends SubsystemBase {
 
     m_leftEncoder = new Encoder(PortMap.kDrivetrainEncoderLeftPortA, PortMap.kDrivetrainEncoderLeftPortB);
     m_rightEncoder = new Encoder(PortMap.kDrivetrainEncoderRightPortA, PortMap.kDrivetrainEncoderRightPortB);
-    m_gyro = new ADXRS450_Gyro();
+    m_gyro = new AHRS();
 
     m_odometry = new DifferentialDriveOdometry(m_gyro.getRotation2d(), 0, 0);
     m_field = new Field2d();
@@ -66,7 +67,9 @@ public class DriveTrain extends SubsystemBase {
     SmartDashboard.putData("Field", m_field);
 
     if(RobotBase.isSimulation()) {
-      m_gyroSim = new ADXRS450_GyroSim(m_gyro);
+      SimDeviceSim deviceSim = new SimDeviceSim("navX-Sensor[0]");
+
+      m_gyroSim = deviceSim.getDouble("Yaw");
       m_leftEncoderSim = new EncoderSim(m_leftEncoder);
       m_rightEncoderSim = new EncoderSim(m_rightEncoder);
       m_drivetrainSimulator = DifferentialDrivetrainSim.createKitbotSim(
@@ -130,7 +133,7 @@ public class DriveTrain extends SubsystemBase {
             m_drivetrainSimulator.getRightPositionMeters());
     m_rightEncoderSim.setRate(
             m_drivetrainSimulator.getRightVelocityMetersPerSecond());
-    m_gyroSim.setAngle(-m_drivetrainSimulator.getHeading().getDegrees());
+    m_gyroSim.set(-m_drivetrainSimulator.getHeading().getDegrees());
   }
 
   public void stop() {

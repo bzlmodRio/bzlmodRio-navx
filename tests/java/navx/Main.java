@@ -1,0 +1,17 @@
+
+
+package bazelrio_test;
+
+
+import com.kauailabs.navx.frc.AHRS;
+
+
+public class Main {
+    private static final double[] m_values = {
+      751.848, 766.366, 342.657, 234.252, 716.126, 132.344, 445.697, 22.727, 421.125, 799.913
+    };
+
+    public static void main(String[] args) {
+        AHRS imu = new AHRS();
+    }
+}

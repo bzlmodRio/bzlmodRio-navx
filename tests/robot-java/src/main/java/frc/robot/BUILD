@@ -25,4 +25,5 @@ robot_java_binary(
     runtime_deps = [
         ":robot-lib",
     ],
+    visibility = ["//visibility:public"],
 )
