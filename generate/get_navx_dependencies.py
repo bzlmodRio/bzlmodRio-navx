@@ -1,22 +1,36 @@
-
 import sys
 import os
 
 from bazelrio_gentool.load_vendordep_dependency import vendordep_dependency
 from generate_allwpilib.get_allwpilib_dependencies import get_allwpilib_dependencies
-from bazelrio_gentool.deps.dependency_container import DependencyContainer, ModuleDependency
+from bazelrio_gentool.deps.dependency_container import (
+    DependencyContainer,
+    ModuleDependency,
+)
 
 
-def get_navx_dependencies(use_local_allwpilib=False, use_local_opencv=False, use_local_ni=False):
+def get_navx_dependencies(
+    use_local_allwpilib=False, use_local_opencv=False, use_local_ni=False
+):
     SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
-    group = vendordep_dependency("navx", os.path.join(SCRIPT_DIR, f"vendor_dep.json"), year=2023, fail_on_hash_miss=False, has_static_libraries=True)
-    
-    allwpilib_dependency = ModuleDependency(get_allwpilib_dependencies(use_local_opencv=use_local_opencv, use_local_ni=use_local_ni), 
-                                            use_local_version=use_local_allwpilib, 
-                                            local_rel_folder="../../bzlmodRio-allwpilib",
-                                            remote_sha="d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
-                                            remote_repo="bzlmodRio-allwpilib",
-                                            remote_comittish="458c77738bee96002ba6edda0117072bc32c4dd1")
+    group = vendordep_dependency(
+        "navx",
+        os.path.join(SCRIPT_DIR, f"vendor_dep.json"),
+        year=2023,
+        fail_on_hash_miss=False,
+        has_static_libraries=True,
+    )
+
+    allwpilib_dependency = ModuleDependency(
+        get_allwpilib_dependencies(
+            use_local_opencv=use_local_opencv, use_local_ni=use_local_ni
+        ),
+        use_local_version=use_local_allwpilib,
+        local_rel_folder="../../bzlmodRio-allwpilib",
+        remote_sha="d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
+        remote_repo="bzlmodRio-allwpilib",
+        remote_commitish="458c77738bee96002ba6edda0117072bc32c4dd1",
+    )
     group.add_module_dependency(allwpilib_dependency)
 
     return group

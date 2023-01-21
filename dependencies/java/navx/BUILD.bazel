@@ -1,0 +1,10 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "navx",
+    visibility = ["//visibility:public"],
+    exports = [
+        artifact("com.kauailabs.navx.frc:navx-frc-java"),
+        "@allwpilib//dependencies/java/wpilibj",
+    ],
+)
