@@ -14,7 +14,7 @@ def main():
     REPO_DIR = os.path.join(SCRIPT_DIR, "..")
     output_dir = os.path.join(REPO_DIR, "dependencies")
     
-    group = get_navx_dependencies(use_local_allwpilib=True, use_local_opencv=True, use_local_ni=True)
+    group = get_navx_dependencies(use_local_allwpilib=False, use_local_opencv=False, use_local_ni=False)
 
     mandetory_dependencies = create_default_mandatory_settings(
         use_local_roborio=False,

@@ -1,10 +1,25 @@
-cc_library(
+alias(
     name = "navx-frc-cpp",
+    actual = ":shared",
+    visibility = ["@navx//:__subpackages__"],
+)
+
+cc_library(
+    name = "shared",
     linkstatic = 1,
     visibility = ["@navx//:__subpackages__"],
     deps = [
-    ] + ["@bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_headers//:headers"] + select({
-        "@rules_roborio_toolchain//constraints/is_roborio:roborio": ["@bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_linuxathena//:shared_libs"],
-        "@bazel_tools//src/conditions:windows": ["@bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_windowsx86-64//:shared_libs"],
-    }),
+    ] + [
+        "@navx//private/cpp/navx-frc-cpp:shared",
+    ],
+)
+
+cc_library(
+    name = "static",
+    linkstatic = 1,
+    visibility = ["@navx//:__subpackages__"],
+    deps = [
+    ] + [
+        "@navx//private/cpp/navx-frc-cpp:static",
+    ],
 )
