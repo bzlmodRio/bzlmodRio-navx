@@ -37,6 +37,7 @@ setup_navx_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_navx
 use_repo(
     setup_navx_cpp_dependencies,
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_headers",
+    "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_sources",
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_linuxathena",
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_linuxathenastatic",
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_windowsx86-64",
