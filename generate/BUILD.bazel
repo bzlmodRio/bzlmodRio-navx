@@ -6,3 +6,12 @@ py_binary(
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )
+
+py_binary(
+    name = "publish_navx",
+    srcs = ["publish_navx.py"],
+    deps = [
+        "@allwpilib//generate_allwpilib:get_allwpilib_dependencies",
+        "@bzlmodrio-gentool//bazelrio_gentool",
+    ],
+)
