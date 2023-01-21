@@ -20,9 +20,11 @@ def download_dependencies():
     )
 
     # Project Generator
-    native.local_repository(
+    http_archive(
         name = "bzlmodrio-gentool",
-        path = "../../gentool",
+        sha256 = "91dbeb541a6151eab3f4dfa37318b81e3f4fa964e45ebea48665cb2b3e471353",
+        strip_prefix = "gentool-dummy_version",
+        url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/dummy_version.zip",
     )
 
     # Bazelrio Rules

@@ -23,14 +23,14 @@ def main():
     mandetory_dependencies = create_default_mandatory_settings(
         use_local_roborio=False,
         use_local_bazelrio=False,
-        use_local_bzlmodrio_gentool=True,
+        use_local_bzlmodrio_gentool=False,
     )
 
     clean_existing_version(REPO_DIR, extra_dir_blacklist=["navx"])
     generate_module_project_files(
         REPO_DIR, group, mandetory_dependencies=mandetory_dependencies
     )
-    generate_private_raw_libraries(output_dir, group)
+    # generate_private_raw_libraries(output_dir, group)
 
 
 if __name__ == "__main__":
