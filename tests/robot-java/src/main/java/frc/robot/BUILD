@@ -22,8 +22,8 @@ robot_java_binary(
     main_class = "frc.robot.Main",
     tags = ["no-sandbox"],
     team_number = 9999,
+    visibility = ["//visibility:public"],
     runtime_deps = [
         ":robot-lib",
     ],
-    visibility = ["//visibility:public"],
 )

@@ -9,7 +9,7 @@ cc_test(
     name = "test",
     srcs = ["test.cpp"],
     deps = [
-        "@navx//dependencies/cpp/navx",
         "@googletest//:gtest_main",
+        "@navx//dependencies/cpp/navx",
     ],
 )

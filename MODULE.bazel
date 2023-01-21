@@ -7,14 +7,13 @@ module(
 bazel_dep(name = "platforms", version = "0.0.4")
 bazel_dep(name = "rules_java", version = "5.1.0")
 bazel_dep(name = "rules_jvm_external", version = "4.4.2")
-
 bazel_dep(name = "bzlmodrio-gentool", version = "0.0.3")
 bazel_dep(name = "rules_bazelrio", version = "0.0.7")
 bazel_dep(name = "rules_roborio_toolchain", version = "2023-7.6")
-
 bazel_dep(name = "allwpilib", version = "2023.1.1")
 bazel_dep(name = "wpi-opencv", version = "4.6.0-4")
 bazel_dep(name = "bzlmodrio-ni", version = "2023.3.0")
+
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
 maven.install(
@@ -32,6 +31,7 @@ use_repo(
     maven,
     "maven",
 )
+
 setup_navx_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_navx_cpp_dependencies")
 
 use_repo(
