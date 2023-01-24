@@ -1,5 +1,3 @@
-load("@rules_jvm_external//:defs.bzl", "artifact")
-
 java_import(
     name = "navx",
     jars = ["@com_kauailabs_navx_frc_navx_frc_java//jar:file"],

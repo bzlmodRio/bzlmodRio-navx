@@ -7,6 +7,6 @@ java_library(
         "@allwpilib//libraries/java/wpilibNewCommands",
         "@allwpilib//libraries/java/wpilibj",
         "@allwpilib//libraries/java/wpimath",
-        "@navx//dependencies/java/navx",
+        "@navx//libraries/java/navx",
     ],
 )

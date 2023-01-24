@@ -2,7 +2,7 @@ cc_binary(
     name = "main",
     srcs = ["main.cpp"],
     # deps = ["@com_github_google_glog//:glog"],
-    deps = ["@navx//dependencies/cpp/navx"],
+    deps = ["@navx//libraries/cpp/navx"],
 )
 
 cc_test(
@@ -10,6 +10,6 @@ cc_test(
     srcs = ["test.cpp"],
     deps = [
         "@googletest//:gtest_main",
-        "@navx//dependencies/cpp/navx",
+        "@navx//libraries/cpp/navx",
     ],
 )
