@@ -3,9 +3,10 @@ java_library(
     srcs = glob(["*.java"]),
     visibility = ["//visibility:public"],
     deps = [
-        "@allwpilib//dependencies/java/wpilibNewCommands",
-        "@allwpilib//dependencies/java/wpilibj",
-        "@allwpilib//dependencies/java/wpimath",
+        "@allwpilib//libraries/java/hal",
+        "@allwpilib//libraries/java/wpilibNewCommands",
+        "@allwpilib//libraries/java/wpilibj",
+        "@allwpilib//libraries/java/wpimath",
         "@navx//dependencies/java/navx",
     ],
 )

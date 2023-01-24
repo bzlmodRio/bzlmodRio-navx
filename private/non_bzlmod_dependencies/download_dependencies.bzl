@@ -20,54 +20,42 @@ def download_dependencies():
     )
 
     # Project Generator
-    http_archive(
+    native.local_repository(
         name = "bzlmodrio-gentool",
-        sha256 = "91dbeb541a6151eab3f4dfa37318b81e3f4fa964e45ebea48665cb2b3e471353",
-        strip_prefix = "gentool-dummy_version",
-        url = "https://github.com/bzlmodRio/gentool/archive/refs/heads/dummy_version.zip",
+        path = "../../gentool",
     )
 
     # Bazelrio Rules
-    http_archive(
+    native.local_repository(
         name = "rules_bazelrio",
-        sha256 = "a8e997def42472dd2f31cd90b855c0aeab93aabe1b436cd48f4e1efdd760f01c",
-        strip_prefix = "bzlmodRio-rules_bazelrio-bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433",
-        url = "https://github.com/bzlmodRio/bzlmodRio-rules_bazelrio/archive/bd9c8375bf4f5a91d08cbf64e359c0b30aaf7433.zip",
+        path = "../../bzlmodRio-rules_bazelrio",
     )
 
     # Roborio Toolchain
-    http_archive(
+    native.local_repository(
         name = "rules_roborio_toolchain",
-        sha256 = "c8a6fc0acac4a08aa884b59d13af9c3da010a4eed416ee10ccc05c73b9753deb",
-        strip_prefix = "rules_roborio_toolchain-8668e36043c7489a9669a9281f7024272b36d583",
-        url = "https://github.com/bzlmodRio/rules_roborio_toolchain/archive/8668e36043c7489a9669a9281f7024272b36d583.zip",
+        path = "../../rules_roborio_toolchain",
     )
 
     ########################
     # bzlmodRio dependencies
 
     # allwpilib
-    http_archive(
+    native.local_repository(
         name = "allwpilib",
-        sha256 = "d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
-        strip_prefix = "bzlmodRio-allwpilib-458c77738bee96002ba6edda0117072bc32c4dd1",
-        url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/archive/458c77738bee96002ba6edda0117072bc32c4dd1.tar.gz",
+        path = "../../bzlmodRio-allwpilib",
     )
 
     # wpi-opencv
-    http_archive(
+    native.local_repository(
         name = "wpi-opencv",
-        sha256 = "4b0b9d708cafb597fa1b7b1730a653c59e03c8f71d58d9474fcce329a112bd61",
-        strip_prefix = "bzlmodRio-opencv-4fc2007fbdb70ec71c40a94ca2b9eaf0cadb5bcb",
-        url = "https://github.com/bzlmodRio/bzlmodRio-opencv/archive/4fc2007fbdb70ec71c40a94ca2b9eaf0cadb5bcb.tar.gz",
+        path = "../../bzlmodRio-opencv",
     )
 
     # bzlmodrio-ni
-    http_archive(
+    native.local_repository(
         name = "bzlmodrio-ni",
-        sha256 = "54ed8d2e0d2c5a76c16eb312b48cef60c2de451910def5e10b7c8e4a8e80f89a",
-        strip_prefix = "bzlmodRio-ni-cc24faa330eb82f05fe30c7df030d59cfa3cfd06",
-        url = "https://github.com/bzlmodRio/bzlmodRio-ni/archive/cc24faa330eb82f05fe30c7df030d59cfa3cfd06.tar.gz",
+        path = "../../bzlmodRio-ni",
     )
 
     ########################

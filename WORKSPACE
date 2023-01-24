@@ -4,7 +4,7 @@ load("@navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "downlo
 
 download_dependencies()
 
-load("@navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
+load("@navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "setup_dependencies")
 
 setup_dependencies()
 

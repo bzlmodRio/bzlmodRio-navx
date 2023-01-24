@@ -4,8 +4,8 @@ cc_library(
     hdrs = glob(["*.hpp"]),
     visibility = ["//visibility:public"],
     deps = [
-        "@allwpilib//dependencies/cpp/wpilibNewCommands",
-        "@allwpilib//dependencies/cpp/wpilibc",
+        "@allwpilib//libraries/cpp/wpilibNewCommands",
+        "@allwpilib//libraries/cpp/wpilibc",
         "@navx//dependencies/cpp/navx",
     ],
 )

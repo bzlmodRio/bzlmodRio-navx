@@ -8,7 +8,7 @@ from bazelrio_gentool.clean_existing_version import clean_existing_version
 from bazelrio_gentool.generate_module_project_files import (
     create_default_mandatory_settings,
 )
-from bazelrio_gentool.generate_group import generate_private_raw_libraries
+# from bazelrio_gentool.generate_group import generate_private_raw_libraries
 
 
 def main():
@@ -17,13 +17,13 @@ def main():
     output_dir = os.path.join(REPO_DIR, "dependencies")
 
     group = get_navx_dependencies(
-        use_local_allwpilib=False, use_local_opencv=False, use_local_ni=False
+        use_local_allwpilib=True, use_local_opencv=True, use_local_ni=True
     )
 
     mandetory_dependencies = create_default_mandatory_settings(
-        use_local_roborio=False,
-        use_local_bazelrio=False,
-        use_local_bzlmodrio_gentool=False,
+        use_local_roborio=True,
+        use_local_bazelrio=True,
+        use_local_bzlmodrio_gentool=True,
     )
 
     clean_existing_version(REPO_DIR, extra_dir_blacklist=["navx"])
