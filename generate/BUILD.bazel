@@ -2,7 +2,7 @@ py_binary(
     name = "generate_navx",
     srcs = ["generate_navx.py"],
     deps = [
-        "@allwpilib//generate_allwpilib:get_allwpilib_dependencies",
+        "@bzlmodrio-allwpilib//generate_allwpilib:get_allwpilib_dependencies",
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )
@@ -11,7 +11,7 @@ py_binary(
     name = "publish_navx",
     srcs = ["publish_navx.py"],
     deps = [
-        "@allwpilib//generate_allwpilib:get_allwpilib_dependencies",
+        "@bzlmodrio-allwpilib//generate_allwpilib:get_allwpilib_dependencies",
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )

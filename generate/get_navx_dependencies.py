@@ -27,9 +27,7 @@ def get_navx_dependencies(
         ),
         use_local_version=use_local_allwpilib,
         local_rel_folder="../../bzlmodRio-allwpilib",
-        remote_sha="d4d8bccb48408d367f3120ec1820fa5452d0eaf0dd053adb18c9e50ab44d2410",
         remote_repo="bzlmodRio-allwpilib",
-        remote_commitish="458c77738bee96002ba6edda0117072bc32c4dd1",
     )
     group.add_module_dependency(allwpilib_dependency)
 

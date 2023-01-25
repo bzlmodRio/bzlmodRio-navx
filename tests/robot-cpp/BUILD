@@ -10,7 +10,7 @@ cc_library(
     deps = [
         "//robot-cpp/commands",
         "//robot-cpp/subsystems",
-        "@allwpilib//libraries/cpp/cameraserver",
+        "@bzlmodrio-allwpilib//libraries/cpp/cameraserver",
     ],
 )
 
@@ -24,7 +24,7 @@ cc_library(
 
 robot_cc_binary(
     name = "robot",
-    halsim_deps = ["@allwpilib//libraries/cpp/halsim_gui:halsim_gui"],
+    halsim_deps = ["@bzlmodrio-allwpilib//libraries/cpp/halsim_gui:halsim_gui"],
     lib_name = "robot-main",
     team_number = 9999,
 )

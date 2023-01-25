@@ -5,7 +5,7 @@ def __setup_navx_java_dependencies(mctx):
         name = "com_kauailabs_navx_frc_navx_frc_java",
         artifact = "com.kauailabs.navx.frc:navx-frc-java:2023.0.1",
         artifact_sha256 = "f704e31153cbf87acd5ee20f7f764e14c5abef74bcdb5e810597c3c9629fb0ca",
-        server_urls = ["https://frcmaven.wpi.edu/release"],
+        server_urls = ["https://dev.studica.com/maven/release/2023"],
     )
 
 def setup_legacy_navx_java_dependencies():

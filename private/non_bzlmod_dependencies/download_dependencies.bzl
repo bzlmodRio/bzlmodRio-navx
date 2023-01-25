@@ -40,15 +40,15 @@ def download_dependencies():
     ########################
     # bzlmodRio dependencies
 
-    # allwpilib
+    # bzlmodrio-allwpilib
     native.local_repository(
-        name = "allwpilib",
+        name = "bzlmodrio-allwpilib",
         path = "../../bzlmodRio-allwpilib",
     )
 
-    # wpi-opencv
+    # bzlmodrio-opencv
     native.local_repository(
-        name = "wpi-opencv",
+        name = "bzlmodrio-opencv",
         path = "../../bzlmodRio-opencv",
     )
 

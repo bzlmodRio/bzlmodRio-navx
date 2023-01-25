@@ -5,7 +5,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "//robot-cpp/subsystems",
-        "@allwpilib//libraries/cpp/wpilibNewCommands",
-        "@allwpilib//libraries/cpp/wpilibc",
+        "@bzlmodrio-allwpilib//libraries/cpp/wpilibNewCommands",
+        "@bzlmodrio-allwpilib//libraries/cpp/wpilibc",
     ],
 )

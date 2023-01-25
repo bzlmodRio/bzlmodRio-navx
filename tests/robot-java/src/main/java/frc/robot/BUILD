@@ -7,15 +7,15 @@ java_library(
     deps = [
         "//robot-java/src/main/java/frc/robot/commands",
         "//robot-java/src/main/java/frc/robot/subsystems",
-        "@allwpilib//libraries/java/wpilibNewCommands",
-        "@allwpilib//libraries/java/wpilibj",
-        "@allwpilib//libraries/java/wpimath",
+        "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",
+        "@bzlmodrio-allwpilib//libraries/java/wpilibj",
+        "@bzlmodrio-allwpilib//libraries/java/wpimath",
     ],
 )
 
 robot_java_binary(
     name = "robot",
-    halsim_deps = ["@allwpilib//libraries/cpp/halsim_gui:halsim_gui"],
+    halsim_deps = ["@bzlmodrio-allwpilib//libraries/cpp/halsim_gui:halsim_gui"],
     jvm_flags = [
         "-Djava.library.path=.",
     ],

@@ -4,7 +4,7 @@ java_library(
     visibility = ["//visibility:public"],
     deps = [
         "//robot-java/src/main/java/frc/robot/subsystems",
-        "@allwpilib//libraries/java/wpilibNewCommands",
-        "@allwpilib//libraries/java/wpilibj",
+        "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",
+        "@bzlmodrio-allwpilib//libraries/java/wpilibj",
     ],
 )
