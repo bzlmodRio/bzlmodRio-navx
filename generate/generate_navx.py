@@ -17,13 +17,13 @@ def main():
     output_dir = os.path.join(REPO_DIR, "dependencies")
 
     group = get_navx_dependencies(
-        use_local_allwpilib=True, use_local_opencv=True, use_local_ni=True
+        use_local_allwpilib=False, use_local_opencv=False, use_local_ni=False
     )
 
     mandetory_dependencies = create_default_mandatory_settings(
-        use_local_roborio=True,
-        use_local_bazelrio=True,
-        use_local_bzlmodrio_gentool=True,
+        use_local_roborio=False,
+        use_local_bazelrio=False,
+        use_local_bzlmodrio_gentool=False,
     )
 
     clean_existing_version(REPO_DIR, extra_dir_blacklist=["navx"])
@@ -35,6 +35,6 @@ def main():
 
 if __name__ == "__main__":
     """
-    bazel run @navx//generate:generate_navx
+    bazel run @bzlmodrio-navx//generate:generate_navx
     """
     main()
