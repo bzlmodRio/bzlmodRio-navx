@@ -59,7 +59,7 @@ cc_library(
 )
 """
 
-def __setup_navx_cpp_dependencies(mctx):
+def __setup_bzlmodrio_navx_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_headers",
@@ -103,9 +103,9 @@ def __setup_navx_cpp_dependencies(mctx):
         build_file_content = cc_library_static,
     )
 
-def setup_legacy_navx_cpp_dependencies():
-    __setup_navx_cpp_dependencies(None)
+def setup_legacy_bzlmodrio_navx_cpp_dependencies():
+    __setup_bzlmodrio_navx_cpp_dependencies(None)
 
-setup_navx_cpp_dependencies = module_extension(
-    __setup_navx_cpp_dependencies,
+setup_bzlmodrio_navx_cpp_dependencies = module_extension(
+    __setup_bzlmodrio_navx_cpp_dependencies,
 )

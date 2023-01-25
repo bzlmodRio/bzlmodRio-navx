@@ -1,5 +1,5 @@
-load("@navx//:maven_cpp_deps.bzl", "setup_legacy_navx_cpp_dependencies")
-load("@navx//:maven_java_deps.bzl", "setup_legacy_navx_java_dependencies")
+load("@bzlmodrio-navx//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_navx_cpp_dependencies")
+load("@bzlmodrio-navx//:maven_java_deps.bzl", "setup_legacy_bzlmodrio_navx_java_dependencies")
 load("@bzlmodrio-allwpilib//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_allwpilib_cpp_dependencies")
 load("@bzlmodrio-allwpilib//:maven_java_deps.bzl", "get_bzlmodrio_allwpilib_java_dependencies", "setup_legacy_bzlmodrio_allwpilib_java_dependencies")
 load("@bzlmodrio-opencv//:maven_cpp_deps.bzl", "setup_legacy_bzlmodrio_opencv_cpp_dependencies")
@@ -22,13 +22,13 @@ def _setup_toolchains():
     )
 
 def _setup_cpp_dependencies():
-    setup_legacy_navx_cpp_dependencies()
+    setup_legacy_bzlmodrio_navx_cpp_dependencies()
     setup_legacy_bzlmodrio_allwpilib_cpp_dependencies()
     setup_legacy_bzlmodrio_opencv_cpp_dependencies()
     setup_legacy_bzlmodrio_ni_cpp_dependencies()
 
 def _setup_java_dependencies():
-    setup_legacy_navx_java_dependencies()
+    setup_legacy_bzlmodrio_navx_java_dependencies()
     setup_legacy_bzlmodrio_allwpilib_java_dependencies()
     setup_legacy_bzlmodrio_opencv_java_dependencies()
 

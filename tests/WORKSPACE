@@ -2,7 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # My repository!
 local_repository(
-    name = "navx",
+    name = "bzlmodrio-navx",
     path = "../",
 )
 
@@ -14,11 +14,11 @@ http_archive(
     urls = ["https://github.com/google/googletest/archive/5ab508a01f9eb089207ee87fd547d290da39d015.zip"],
 )
 
-load("@navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
+load("@bzlmodrio-navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
 
 download_dependencies()
 
-load("@navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
+load("@bzlmodrio-navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
 
 setup_dependencies()
 

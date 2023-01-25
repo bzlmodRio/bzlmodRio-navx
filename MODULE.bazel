@@ -1,5 +1,5 @@
 module(
-    name = "navx",
+    name = "bzlmodrio-navx",
     version = "2023.0.1",
     compatibility_level = 2023,
 )
@@ -13,9 +13,9 @@ bazel_dep(name = "bzlmodrio-allwpilib", version = "2023.2.1")
 bazel_dep(name = "bzlmodrio-opencv", version = "4.6.0-4")
 bazel_dep(name = "bzlmodrio-ni", version = "2023.3.0")
 
-setup_navx_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_navx_cpp_dependencies")
+setup_bzlmodrio_navx_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_bzlmodrio_navx_cpp_dependencies")
 use_repo(
-    setup_navx_cpp_dependencies,
+    setup_bzlmodrio_navx_cpp_dependencies,
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_headers",
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_linuxathena",
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_linuxathenastatic",
@@ -24,8 +24,8 @@ use_repo(
     "bazelrio_com_kauailabs_navx_frc_navx-frc-cpp_windowsx86-64static",
 )
 
-setup_navx_java_dependencies = use_extension("//:maven_java_deps.bzl", "setup_navx_java_dependencies")
+setup_bzlmodrio_navx_java_dependencies = use_extension("//:maven_java_deps.bzl", "setup_bzlmodrio_navx_java_dependencies")
 use_repo(
-    setup_navx_java_dependencies,
+    setup_bzlmodrio_navx_java_dependencies,
     "com_kauailabs_navx_frc_navx_frc_java",
 )

@@ -1,10 +1,10 @@
-workspace(name = "navx")
+workspace(name = "bzlmodrio_navx")
 
-load("@navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
+load("@bzlmodrio_navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
 
 download_dependencies()
 
-load("@navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "setup_dependencies")
+load("@bzlmodrio_navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "setup_dependencies")
 
 setup_dependencies()
 

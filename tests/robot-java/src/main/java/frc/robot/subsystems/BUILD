@@ -7,6 +7,6 @@ java_library(
         "@bzlmodrio-allwpilib//libraries/java/wpilibNewCommands",
         "@bzlmodrio-allwpilib//libraries/java/wpilibj",
         "@bzlmodrio-allwpilib//libraries/java/wpimath",
-        "@navx//libraries/java/navx",
+        "@bzlmodrio-navx//libraries/java/navx",
     ],
 )

@@ -1,6 +1,6 @@
-bazel_dep(name = "navx", version = "", repo_name = "navx")
+bazel_dep(name = "bzlmodrio-navx", version = "", repo_name = "bzlmodrio-navx")
 local_path_override(
-    module_name = "navx",
+    module_name = "bzlmodrio-navx",
     path = "..",
 )
 

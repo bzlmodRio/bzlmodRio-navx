@@ -14,7 +14,7 @@ def get_navx_dependencies(
 ):
     SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
     group = vendordep_dependency(
-        "navx",
+        "bzlmodrio-navx",
         os.path.join(SCRIPT_DIR, f"vendor_dep.json"),
         year=2023,
         fail_on_hash_miss=False,
