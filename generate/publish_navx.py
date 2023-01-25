@@ -9,15 +9,12 @@ def main():
 
     group = get_navx_dependencies()
 
-    module_template = os.path.join(SCRIPT_DIR, "module_config.jinja2")
-    module_json_template = os.path.join(SCRIPT_DIR, "module_config.json.jinja2")
-
     os.chdir(SCRIPT_DIR)
-    generate_json(registry_location, group, module_json_template, module_template)
+    generate_json(registry_location, group, module_json_template=None, module_template=None)
 
 
 if __name__ == "__main__":
     """
-    bazel run @navx//generate:publish_navx
+    bazel run @bzlmodrio-navx//generate:publish_navx
     """
     main()
