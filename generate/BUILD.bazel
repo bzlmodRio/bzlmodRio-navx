@@ -1,17 +1,26 @@
-py_binary(
-    name = "generate_navx",
-    srcs = ["generate_navx.py"],
+py_library(
+    name = "get_navx_dependencies",
+    srcs = ["get_navx_dependencies.py"],
     deps = [
-        "@bzlmodrio-allwpilib//generate_allwpilib:get_allwpilib_dependencies",
+        "@bzlmodrio-allwpilib-gentool//:get_allwpilib_dependencies",
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )
 
 py_binary(
-    name = "publish_navx",
-    srcs = ["publish_navx.py"],
+    name = "generate",
+    srcs = ["generate.py"],
     deps = [
-        "@bzlmodrio-allwpilib//generate_allwpilib:get_allwpilib_dependencies",
+        ":get_navx_dependencies",
+        "@bzlmodrio-gentool//bazelrio_gentool",
+    ],
+)
+
+py_binary(
+    name = "publish",
+    srcs = ["publish.py"],
+    deps = [
+        ":get_navx_dependencies",
         "@bzlmodrio-gentool//bazelrio_gentool",
     ],
 )

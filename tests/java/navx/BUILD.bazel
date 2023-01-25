@@ -39,9 +39,9 @@ bazelrio_java_test(
         "@maven//:org_junit_platform_junit_platform_suite_api",
     ],
     deps = [
+        "@bzlmodrio-navx//libraries/java/navx",
         "@maven//:org_junit_jupiter_junit_jupiter_api",
         "@maven//:org_junit_jupiter_junit_jupiter_engine",
         "@maven//:org_junit_jupiter_junit_jupiter_params",
-        "@bzlmodrio-navx//libraries/java/navx",
     ],
 )

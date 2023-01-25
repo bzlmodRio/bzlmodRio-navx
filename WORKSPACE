@@ -1,10 +1,10 @@
-workspace(name = "bzlmodrio_navx")
+workspace(name = "bzlmodrio-navx")
 
-load("@bzlmodrio_navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
+load("@bzlmodrio-navx//private/non_bzlmod_dependencies:download_dependencies.bzl", "download_dependencies")
 
 download_dependencies()
 
-load("@bzlmodrio_navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "setup_dependencies")
+load("@bzlmodrio-navx//private/non_bzlmod_dependencies:setup_dependencies.bzl", "get_java_dependenicies", "setup_dependencies")
 
 setup_dependencies()
 
@@ -18,7 +18,3 @@ maven_install(
     repositories = maven_repositories,
     # maven_install_json = "//build_scripts/bazel/deps:maven_install.json",
 )
-
-load("@bzlmodrio-gentool-pip//:requirements.bzl", "install_deps")
-
-install_deps()

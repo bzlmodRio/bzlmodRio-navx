@@ -2,7 +2,7 @@ import sys
 import os
 
 from bazelrio_gentool.load_vendordep_dependency import vendordep_dependency
-from generate_allwpilib.get_allwpilib_dependencies import get_allwpilib_dependencies
+from get_allwpilib_dependencies import get_allwpilib_dependencies
 from bazelrio_gentool.deps.dependency_container import (
     DependencyContainer,
     ModuleDependency,
