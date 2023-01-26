@@ -8,6 +8,10 @@ cc_binary(
 cc_test(
     name = "test",
     srcs = ["test.cpp"],
+    tags = [
+        "bazelrio-cpp-test",
+        "no-sandbox",
+    ],
     deps = [
         "@bzlmodrio-navx//libraries/cpp/navx",
         "@googletest//:gtest_main",
