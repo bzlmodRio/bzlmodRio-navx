@@ -24,7 +24,6 @@ def main():
     mandetory_dependencies = create_default_mandatory_settings(
         use_local_roborio=False,
         use_local_bazelrio=False,
-        use_local_bzlmodrio_gentool=False,
     )
 
     clean_existing_version(REPO_DIR, extra_dir_blacklist=["navx"])
